@@ -1,0 +1,6 @@
+{
+  "name": "ResQAI",
+  "description": "Autonomous disaster early warning, verified citizen disaster media reporting, offline safe evacuation routing, and 2G SMS emergency distress beacon.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

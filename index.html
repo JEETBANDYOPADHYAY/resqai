@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Suppress benign [vite] websocket connection warnings and events in sandboxed preview
+      (function () {
+        var isViteMsg = function (msg) {
+          if (!msg) return false;
+          var str = typeof msg === 'string' ? msg : (msg.message || msg.reason || String(msg));
+          return str.indexOf('[vite]') !== -1 || str.indexOf('failed to connect to websocket') !== -1 || str.indexOf('vite-hmr') !== -1;
+        };
+        var filterLog = function (orig) {
+          return function () {
+            for (var i = 0; i < arguments.length; i++) {
+              if (isViteMsg(arguments[i])) return;
+            }
+            orig.apply(console, arguments);
+          };
+        };
+        console.error = filterLog(console.error);
+        console.warn = filterLog(console.warn);
+        console.info = filterLog(console.info);
+        window.addEventListener('error', function (e) {
+          if (isViteMsg(e.message) || isViteMsg(e.error)) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function (e) {
+          if (isViteMsg(e.reason)) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, true);
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResQAI - AI Disaster Early Warning & Safe Evacuation Routing</title>
+    <meta name="description" content="Autonomous disaster early warning, verified citizen disaster media reporting, offline safe evacuation routing, and 2G SMS emergency distress beacon." />
+    <meta property="og:title" content="ResQAI - AI Disaster Early Warning & Safe Evacuation Routing" />
+    <meta property="og:description" content="Autonomous disaster early warning, verified citizen disaster media reporting, offline safe evacuation routing, and 2G SMS emergency distress beacon." />
+    <meta name="theme-color" content="#0c0c0e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ResQAI" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-red-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
