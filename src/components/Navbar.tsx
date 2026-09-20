@@ -115,9 +115,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#0C0C0E]/95 backdrop-blur-md border-b border-slate-800 overflow-x-clip">
+    <header className="sticky top-0 z-40 w-full bg-[#0C0C0E]/95 backdrop-blur-md border-b border-slate-800">
       <div className="w-full max-w-[1920px] mx-auto px-3 sm:px-4 lg:px-6 2xl:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 gap-2 sm:gap-3 min-w-0">
+        <div className="flex flex-wrap items-center justify-between py-2 sm:py-3 gap-y-2 gap-x-3 min-w-0">
           {/* Left: Brand Logo, Live Timestamp & Threat Badge */}
           <div className="flex items-center space-x-2 sm:space-x-3 shrink-0 min-w-0">
             {/* Logo */}
@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Right: Language Selector, Profile Switcher & Action Controls */}
-          <div className="flex items-center space-x-1 sm:space-x-1.5 2xl:space-x-2 shrink-0">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 shrink-0 justify-end">
             {/* Multilingual Selector */}
             <div
               id="language-switcher"
@@ -225,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="btn-voice-pack-nav"
               onClick={() => setShowVoiceModal(true)}
-              className="p-1 sm:p-1.5 rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-cyan-300 transition shadow-sm shrink-0 flex items-center space-x-1"
+              className="hidden sm:flex p-1 sm:p-1.5 rounded-lg border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-cyan-300 transition shadow-sm shrink-0 items-center space-x-1"
               title="Voice Pack System (English, বাংলা, हिन्दी)"
             >
               <Volume2 className="w-3.5 h-3.5 text-cyan-400" />
@@ -353,15 +353,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="hidden lg:flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 hover:text-emerald-100 border border-emerald-700/60 text-xs font-semibold transition-all shadow-sm shrink-0"
               >
                 <Stethoscope className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="hidden xl:inline font-mono text-[10px] whitespace-nowrap">Govt Doctors & Rescue</span>
+                <span className="hidden 2xl:inline font-mono text-[10px] whitespace-nowrap">Govt Doctors & Rescue</span>
                 {activeRescueRequest && activeRescueRequest.status !== 'RESOLVED' && (
                   <span className="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
                 )}
               </button>
             )}
 
-            {/* PWA Install Button (Desktop xl+) */}
-            <div className="hidden xl:block shrink-0">
+            {/* PWA Install Button (Desktop 2xl+) */}
+            <div className="hidden 2xl:block shrink-0">
               <PWAInstallButton />
             </div>
 

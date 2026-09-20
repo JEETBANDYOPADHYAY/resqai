@@ -143,7 +143,7 @@ export const CitizenNavigationCard: React.FC<CitizenNavigationCardProps> = ({
   return (
     <div className="bg-[#0C0C0E] rounded-xl border border-slate-800 p-4 sm:p-5 shadow-2xl flex flex-col space-y-4">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 flex-wrap border-b border-slate-800 pb-3">
         <div className="flex items-center space-x-2.5">
           <div className="p-2 rounded-lg bg-emerald-950/40 text-emerald-400 border border-emerald-900/50 shrink-0">
             <Navigation className="w-5 h-5" />
@@ -164,7 +164,7 @@ export const CitizenNavigationCard: React.FC<CitizenNavigationCardProps> = ({
         </div>
 
         {/* Action Buttons: Doctors & Rescue, 2G SMS Beacon & Live SOS */}
-        <div className="flex items-center space-x-2 shrink-0 flex-wrap gap-y-1.5">
+        <div className="flex items-center gap-2 flex-wrap sm:justify-end">
           {onOpenMedicalHelp && (
             <button
               id="btn-emergency-medical-help"
@@ -248,9 +248,9 @@ export const CitizenNavigationCard: React.FC<CitizenNavigationCardProps> = ({
       )}
 
       {/* Origin & Destination Selector Bar */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-xs">
+      <div className="flex flex-col gap-3 p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-xs">
         {/* Origin */}
-        <div className="flex items-center space-x-2.5">
+        <div className="flex flex-wrap items-center gap-2.5">
           <div className="w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-950 shrink-0" />
           <div className="flex-1 min-w-0">
             <div className="text-[10px] text-slate-400 font-mono uppercase">{t('yourLocation')}</div>
@@ -270,10 +270,10 @@ export const CitizenNavigationCard: React.FC<CitizenNavigationCardProps> = ({
         </div>
 
         {/* Destination Safe Haven */}
-        <div className="flex items-center space-x-2.5">
+        <div className="flex flex-wrap items-center gap-2.5">
           <div className="w-3 h-3 rounded-full bg-emerald-400 ring-4 ring-emerald-950 shrink-0" />
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-1.5">
+            <div className="flex flex-wrap items-center gap-1.5">
               <span className="text-[10px] text-slate-400 font-mono uppercase">{t('destinationSafeZone')}</span>
               {selectedTargetNodeId ? (
                 <span className="text-[9px] bg-cyan-950 text-cyan-300 px-1 py-0.2 rounded border border-cyan-800 font-mono">
@@ -291,7 +291,7 @@ export const CitizenNavigationCard: React.FC<CitizenNavigationCardProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center space-x-1.5 shrink-0">
+          <div className="flex items-center gap-1.5 shrink-0 flex-wrap justify-end">
             {selectedTargetNodeId && (
               <button
                 id="btn-revert-ai-shelter"
