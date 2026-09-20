@@ -1,6 +1,4 @@
 
-
-```markdown
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 
@@ -30,9 +28,9 @@
 - **Node.js** (v18+ recommended)
 - A **Gemini API Key** from [Google AI Studio](https://aistudio.google.com/)
 
-### Installation Steps
+Installation Steps
 1. **Clone & Install Dependencies**
-   Navigate into the project directory and run:
+Navigate into the project directory and run:
    ```bash
    npm install
    ```
