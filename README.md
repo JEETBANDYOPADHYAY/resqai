@@ -49,4 +49,3 @@ Commander-level dashboards, AI verification limits, and API dispatch endpoints a
 
 ---
 *Built with ❤️ for Smart India Hackathon. Driving intelligent situational awareness and rapid crisis response when every second counts.*
-```
