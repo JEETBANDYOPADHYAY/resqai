@@ -1,7 +1,4 @@
 
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://yt3.googleusercontent.com/Owpz1m1IEyNow8axofLYqbVcqrgDcMJEAhdBTlkxMWo5N86FYeAydAdx4XinLykfff2DJ0ST48k=s160-c-k-c0x00ffffff-no-rj" />
-
 # ResQAI: AI-Powered Disaster Management & Emergency Response 🚨
 **Developed for Smart India Hackathon (SIH)** 
 </div>
